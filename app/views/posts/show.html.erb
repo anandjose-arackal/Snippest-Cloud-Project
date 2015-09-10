@@ -1,0 +1,112 @@
+  <section id="title" class="emerald">
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1><%= @post.post_heading %></h1>
+                    
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Pages</a></li>
+                        <li class="active">Blog Item</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section><!--/#title-->
+    <section id="blog" class="container">
+        <div class="row">
+            <aside class="col-sm-4 col-sm-push-8">
+                <div class="widget search">
+                    <form role="form">
+                        <div class="input-group">
+                            <input type="text" class="form-control" autocomplete="off" placeholder="Search">
+                            <span class="input-group-btn">
+                                <button class="btn btn-danger" type="button"><i class="icon-search"></i></button>
+                            </span>
+                        </div>
+                    </form>
+                </div><!--/.search-->
+                <div class="widget categories">
+                  <h3>Blog Categories</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="arrow">
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Updates</a></li>
+                                <li><a href="#">Tutorial</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="arrow">
+                                <li><a href="#">Joomla</a></li>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#">Drupal</a></li>
+                                <li><a href="#">Magento</a></li>
+                                <li><a href="#">Bootstrap</a></li>
+                            </ul>
+                        </div>
+                    </div>                     
+                </div><!--/.categories-->
+            </aside>
+                <div class="col-sm-8 col-sm-pull-4">
+                <div class="blog">
+                    <div class="blog-item">
+                        <img class="img-responsive img-blog" src="images/blog/blog2.jpg" width="100%" alt="" />
+                        <div class="blog-content">
+                            <div class="entry-meta">
+                                <span><i class="icon-user"></i> <a href="#">
+                                    <%= @user.name %>
+                                </a></span>
+                                <span><i class="icon-folder-close"></i> <a href="#">Bootstrap</a></span>
+                                <span><i class="icon-calendar"></i> Sept 16th, 2012</span>
+                                <span><i class="icon-comment"></i> <a href="blog-item.html#comments">3 Comments</a></span>
+                            </div>
+                            <p class="lead">
+                                <%= @post.post_description %>
+                            </p>
+
+                            <p>
+                                <%= @post.post_content %>
+                            </p>
+
+                            <hr>
+
+                            <div class="tags">
+                                <i class="icon-tags"></i> Tags <a class="btn btn-xs btn-primary" href="#">CSS3</a> <a class="btn btn-xs btn-primary" href="#">HTML5</a> <a class="btn btn-xs btn-primary" href="#">WordPress</a> <a class="btn btn-xs btn-primary" href="#">Joomla</a>
+                            </div>
+
+                            <p>&nbsp;</p>
+
+                        <%= link_to "Comments", "#" , id:"comment-link" %>   
+                        <section id ="comments-section"> 
+                            <div id="comments">
+                            <ol id="comments-list">
+                             <%= render @comments %>
+                             </ol>
+                                <div id="comment-form">
+                                    <h3>Leave a comment</h3>
+                                    <%=form_for [@post ,@post.comments.new] , remote:true do |f| %>
+                                        <div class="form-group">
+                                            
+                                        <div class="form-group">
+                                            <div class="col-sm-12">
+                                                <%= f.text_area :comments_content , rows:"8", class:"form-control", placeholder:"Write your comment here" %>
+                                            </div>
+                                        </div>
+                                        <%= submit_tag "Post" ,class:"btn btn-danger btn-lg" %>
+                                        <% end %>
+                                    </form>
+                                </div><!--/#comment-form-->
+                             </div><!--/#comments-->
+                           </div>
+                        </section><!--/comment-section -->
+                        </div>
+                    </div><!--/.blog-item-->
+                </div>
+            </div><!--/.col-md-8-->
+        </div><!--/.row-->
+    </section><!--/#blog-->

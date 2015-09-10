@@ -1,0 +1,2 @@
+module SnippesttestsHelper
+end

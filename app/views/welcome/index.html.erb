@@ -1,0 +1,80 @@
+<% content_for :title, "Snippest | Knowledge is here" %>
+<!-- Section: intro -->
+    <section id="intro" class="intro">
+		<div class="slogan">
+			<h1>Snippest</h1>
+			<p>Kowledge is here</p>
+			<a href="#about" class="btn btn-skin scroll">Learn more</a>
+		</div>
+    </section>
+<!-- /Section: intro -->
+<!-- Section : Services -->
+    
+    <section id="services" class="emerald">
+    	<div class="container">
+    	    <div class="row">
+    	        <div class="col-md-4 col-sm-6">
+    	             <div class="media">
+    	                <div class="pull-left">
+                            <i class="icon-pencil icon-md"></i>
+                        </div> 
+                        <div class="media-body">
+                          <a href="/posts/post_about">   
+                            <h2 class="media-heading">Post an Article</h2>
+                          </a>  
+                        </div>
+                    </div>
+    	        </div>
+    	        <div class="col-md-4 col-sm-6">
+    	             <div class="media" >
+    	                <div class="pull-left">
+                            <i class="icon-question icon-md"></i>
+                        </div>    
+                        <div class="media-body">
+                           <a href="#">
+                            <h2 class="media-heading">Ask a Question</h2>
+                           </a> 
+                        </div>
+                    </div>
+    	        </div>
+    	        <div class="col-md-4 col-sm-6">
+    	             <div class="media" >
+    	                <div class="pull-left">
+                            <i class="icon-search icon-md"></i>
+                        </div>   
+                        <div class="media-body">
+                          <a href="#"> 
+                            <h2 class="media-heading">Search Article</h2>
+                          </a>  
+                        </div>
+                    </div>
+    	        </div>
+    	    </div>
+    	</div>
+    </section>
+<!-- /Section: Services -->
+<!-- section Recent Article -->
+<section>
+    <div class="container">
+    <div class="row">
+                <div class="col-lg-12">
+                    <div class="center">
+                        <h2>Recent Article</h2>
+                    </div>
+                    <div class="gap"></div>
+                    <% @posts.each do |post| %>
+                        <div class="col-md-6">
+                            <blockquote>
+                                <h3><%= post.post_heading %></h3>
+                                <p><%=post.post_description %></p>
+                                <p><%= link_to "Read more" , post_path(post) %></p>
+                            </blockquote> 
+                        </div>  
+                     <% end %>      
+                    </div>      
+                </div>
+    </div>
+    </div>
+</section>
+<!-- /section Recent -->
+

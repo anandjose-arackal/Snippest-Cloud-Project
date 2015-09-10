@@ -1,0 +1,48 @@
+<section id="title" class="emerald">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Login</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li>Not a member</li>
+                        <li><a href="#"><strong>Registration </strong></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</section><!--/#title--> 
+
+<% if flash[:notice] %>
+<section>
+ <div  class="alert alert-warning col-md-4 col-md-offset-4">
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Warning!</strong> 
+    <%= flash[:notice] %>
+ </div>
+<% end %>  
+</section>
+<section id="registration" class="container">
+ <!-- <div class="col-md-4 col-md-offset-4 ">-->
+  <div class="center">
+	<%=form_for @user , :url => {:controller => "users", :action =>"attempt_login" } , :class =>"center" do |f| %>
+	 <fieldset class="registration-form">
+            <div class="form-group">
+                  <%=f.text_field :emailid , class: "form-control", placeholder:"Enter E-mail" , required: "true" ,
+                    pattern: "[^@]+@[^@]+\.[a-zA-Z]{2,6}" %>
+            </div>
+
+            <div class="form-group">
+                 <%=f.password_field :password , class: "form-control" , placeholder: "Enter Password" , required: "true" 
+                    %>
+            </div>
+
+            <div  class="form-group">
+                 <%= submit_tag "Save" , class:"btn btn-success btn-md btn-block" %>
+            </div> 
+      </fieldset>       
+    <% end %>
+   </div> 
+<!-- </div>-->
+</section>
