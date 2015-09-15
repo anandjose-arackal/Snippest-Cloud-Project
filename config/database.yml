@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: pg_test_production
+  database: pg_snippest_production
   username: pg_test
   password: <%= ENV['PG_TEST_DATABASE_PASSWORD'] %>

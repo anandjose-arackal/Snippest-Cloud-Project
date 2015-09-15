@@ -1,0 +1,44 @@
+<section id ="title" class="emerald">
+  <div class="container">
+
+     <div class="row">
+                <div class="col-sm-6">
+                    <h2>Upload your files</h2>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Submit Article</li>
+                    </ul> 
+                </div>
+      </div>
+  </div>
+</section>
+
+<section id="newpost" class="container">
+   <div class="col-md-6 col-md-offset-3">
+       <%= form_tag [@post , @attachment ] , enctype: 'multipart/form-data' do |f|%>
+       <div class="form-group">
+        <%= file_field_tag :file , id: "i_file" , class:"form-control" ,placeholder:"select your file" %>
+       </div> 
+       <div class="form-group " >
+        <%= submit_tag 'Upload' , id: "i_submit", remote: "true" , 
+        class:"btn btn-success col-md-4 "%>
+        <a href=<%= '/post/'+ params[:post_id] %> class="btn  btn-danger col-md-4 pull-right">Cancel </a>
+       </div>
+       <% end %>
+   </div>
+   <div class="col-md-3">
+      <div class="panel panel-success">
+       <div class="panel-heading">Pleass Read This</div>
+       <div class="panel-body">
+       	  <ul>
+       	  	<li>Image format( .jpg .png .bmp) must be less than 1mb size</li>
+       	  	<li> If your file has executable files like .exe .sh .bat tryto upload in zip or rar format </li>
+       	  	<li>You haven't any attachment go with cancel option</li>
+       	  </ul>
+       	  <center>Thankyou....</center>
+       </div>
+      </div>
+    </div>
+</section>

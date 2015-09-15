@@ -1,0 +1,37 @@
+<section id ="title" class="emerald">
+  <div class="container">
+
+     <div class="row">
+                <div class="col-sm-6">
+                    <h2></h2>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Submit Article</li>
+                    </ul> 
+                </div>
+      </div>
+  </div>
+</section>
+<section id="newpost" class="container">
+   <div class="col-md-8 col-md-offset-2">
+     <%= form_for [@user , @userdet ], enctype:'multipart/form-data' do |f| %>
+         <div class="form-group">
+           <label>Experiance Details</label>
+           <%= f.text_field :user_experience , class: "form-control" , placeholder: "Exeperince in your domain" %>
+         </div>
+         <div class="form-group">
+           <label>Where you work</label>
+          <%= f.text_field :user_field_work , class: "form-control" , placeholder: "Domain / Company you work" %>
+         </div>
+         <label>Choose an Avatar image</label>
+         <div class="form-group">
+           <%= file_field_tag :file , class:"form-control" ,placeholder:"select your file" %>
+          </div>
+          <div class="form-group">
+            <%= submit_tag "Save" , class:"btn btn-success btn-md btn-block" %>
+         </div>
+     <% end %>
+   </div>
+</section>

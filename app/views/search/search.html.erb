@@ -1,2 +1,74 @@
-<h1>Search#search</h1>
-<p>Find me in app/views/search/search.html.erb</p>
+<section id ="title" class="emerald">
+  <div class="container">
+     <div class="row">
+                <div class="col-sm-6">
+                    <h2>Submit a new Article</h2>
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="index.html">Home</a></li>
+                        <li class="active">Submit Article</li>
+                    </ul> 
+                </div>
+      </div>
+  </div>
+</section>
+
+ <div class="col-md-offset-4 col-md-4" style="margin-top:10px;" >
+  <%= form_for search_path, method: :get do |f| %>
+      <div class="input-group">
+        <input id="q" name="q" type="textbox" placeholder="Search Here" class="form-control">
+           <span class="input-group-btn">
+             <button  class="btn btn-danger" type="submit"><i class="icon-search"></i></button>
+           </span>
+      </div>
+   <% end %>
+  </div>
+<section id ="search-result">
+  <div class="row" >
+    <aside class="col-sm-4 col-sm-push-8">
+      <div class="widget categories">
+                  <h3>Blog Categories</h3>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <ul class="arrow">
+                                <li><a href="#">Development</a></li>
+                                <li><a href="#">Design</a></li>
+                                <li><a href="#">Updates</a></li>
+                                <li><a href="#">Tutorial</a></li>
+                                <li><a href="#">News</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-sm-6">
+                            <ul class="arrow">
+                                <li><a href="#">Joomla</a></li>
+                                <li><a href="#">Wordpress</a></li>
+                                <li><a href="#">Drupal</a></li>
+                                <li><a href="#">Magento</a></li>
+                                <li><a href="#">Bootstrap</a></li>
+                            </ul>
+                        </div>
+                    </div>                     
+        </div><!--/.categories-->
+    </aside>
+      <div class="col-md-offset-1 col-md-7 col-sm-8 col-sm-pull-4">
+          <div class="search"> 
+              <% @posts.each do |post| %>
+                <div class="search-item">
+                <div class="search-content">
+                <span class="pull-right"><i class="icon-calendar"></i>
+                 <%= time_ago_in_words( post.created_at)%> ago
+                 </span>
+                <h2>
+                <%= post.post_heading %></h2>
+                <hr>
+                  <%= link_to "Read more" , post_path(post) , class:"btn btn-default" ,
+                   i:"icon-angle-right"%>
+                </div>
+                </div><!--/.search-item-->
+               <% end %>  
+          </div><!--/.search -item -->
+    </div><!--/.col-md-8-->
+  </div> 
+
+</section>

@@ -1,0 +1,9 @@
+<% if @user.like?(post) %>
+  <%= button_to "Liked", unlike_path(post_id: post.id) , class:"btn btn-success pull-right",
+      remote: true, method: :delete  %>
+<% else %>
+  <%= button_to  "Like", like_path(post_id: post.id), class:"btn btn-default pull-right", remote: true  %>
+<% end %>
+
+
+

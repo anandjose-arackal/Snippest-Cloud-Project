@@ -11,9 +11,10 @@
 // about supported directives.
 //
 
-//= require bootstrap.min
+//= require quill
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
+//= require bootstrap.min
 //= require_tree .
 

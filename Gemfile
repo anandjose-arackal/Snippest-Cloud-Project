@@ -29,11 +29,20 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-
+#elastic search support
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+# rich text box
+gem 'quill-rails', '~> 0.1.0' 
+#database support 
+#AWS sdk
+gem 'aws-sdk'
+### deploy
+gem 'figaro'
+gem 'puma'  
 group :development, :test do
   # Use postgres as the database for Active Record
   gem 'pg'
-  
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
 
@@ -42,5 +51,18 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  #depoly
+  gem 'capistrano'
+  gem 'capistrano3-puma'
+  gem 'capistrano-rails', require: false
+  gem 'capistrano-bundler', require: false
+  gem 'capistrano-rvm'
 end
+
+group :production do
+	gem 'pg'
+end
+
+
 

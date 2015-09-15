@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  get 'search/search'
-
+  
   root 'welcome#index'
-
-  get 'posts/new'
 
   get 'users/login'
 
@@ -13,20 +10,37 @@ Rails.application.routes.draw do
 
   get 'welcome/about'
 
-  get 'post/post_about'
+  get 'welcome/contact' => 'welcome#contact'
 
+  get 'posts/post_about' =>'posts#post_about'
+
+  get 'search', to: 'search#search'
+
+  get 'posts/:id' => 'posts#show' , as: :post 
+
+  get 'userdets/show' => 'userdets#show'
 
   post 'posts' => 'posts#create'
-  get 'posts/:id' => 'posts#show' , as: :post 
+
   post 'users' => 'users#create'
+
   post 'users/attempt_login' => 'users#attempt_login'
+
   post 'posts/search' => 'posts#search' 
-  get 'posts/search' => 'posts#search' 
+
+  match 'like', to: 'likes#like', via: :post
+  
+  match 'unlike', to: 'likes#unlike', via: :delete
+   
   #match ':controller(/:action(/:id))', :via => [:get,:post]
-  resources :users
+  resources :users do
+    resources :userdets
+  end
   resources :posts do
    resources :comments
+   resources :attachments
   end
+  
   
 
   # The priority is based upon order of creation: first created -> highest priority.
