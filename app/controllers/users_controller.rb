@@ -8,6 +8,8 @@ class UsersController < ApplicationController
   def create
   	   @user=User.new(user_params)
   	   if @user.save
+            session[:user_id]=@user.id
+            session[:user_name]=@user.name 
   	   	    redirect_to :controller =>'welcome' , :action => 'index'
   	   	else
   	   	    redirect_to :controller =>'users' ,:action => 'new'
@@ -51,6 +53,13 @@ class UsersController < ApplicationController
     end  
      
   end
+
+  def logout
+    session[:user_id]=nil
+    session[:user_name]=nil
+    redirect_to :controller =>'welcome' , :action => 'index'
+  end
+
 private  
 
     def user_params

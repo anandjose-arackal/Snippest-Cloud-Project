@@ -30,6 +30,7 @@ class PostsController < ApplicationController
     @comment_no=@post.comments.count
     @like_no=Like.select('id').where("post_id = ?",params[:id])
     @like=Like.select('id').where("post_id = ? AND user_id =?" ,params[:id] , session[:user_id]).count
+    @attachments=@post.attachments
       
   end
 

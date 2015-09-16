@@ -1,0 +1,58 @@
+<section id="title" class="emerald">
+    <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Admin Controll Panel</h1> 
+                </div>
+                <div class="col-sm-6">
+                    <ul class="breadcrumb pull-right">
+                        <li><a href="/admin/index">Home</a></li>
+                        <li class="active">C Panel</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+ </section><!--/#title-->
+<section class="container">
+  <div class="col-md-offset-1 col-md-10">
+   <div class="admin">
+     <div class="row">
+      <div class="col-md-4">
+         <h3>Members</h3>
+         <h4>Joined:<%= @user_cnt %></h4>
+         <h4>Full-access:<%=@usetdet_cnt %></h4>
+          <hr>
+         <%= link_to "View all" , "#" , class:"btn btn-default" %>
+      </div>
+      <div class="col-md-4">
+         <h3>Article</h3>
+         <h4>Collection at:<%= @post_cnt %></h4>
+         <h4>Attached:<%= @attach_cnt %></h4>
+         <h4>Comments on post:<%= @post_cnt %></h4>
+         <hr>
+         <%= link_to "View all" , "#" , class:"btn btn-default" %>
+      </div>
+      <div class="col-md-4">
+         <h3>Discussion</h3>
+      </div>
+     </div>
+   </div>
+  </div>
+</section>
+<section class="container">
+  <div class="col-md-offset-1 col-md-10">
+   <div class="admin">
+   <h3>Member Registraion</h3>
+   <%= line_chart @user.group_by_day(:created_at).count %>
+   </div>
+  </div>
+</section>  
+<section class="container">
+  <div class="col-md-offset-1 col-md-10">
+   <div class="admin">
+   <h3>Article Creation</h3>
+   <%= line_chart @post.group_by_day(:created_at).count %>
+   </div>
+  </div>
+</section>  
+

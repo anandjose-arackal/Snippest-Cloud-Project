@@ -37,6 +37,10 @@ gem 'quill-rails', '~> 0.1.0'
 #database support 
 #AWS sdk
 gem 'aws-sdk'
+## chart kick
+gem 'chartkick'
+gem 'groupdate'
+gem 'active_median'
 ### deploy
 gem 'figaro'
 gem 'puma'  

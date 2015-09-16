@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'admin/index'
+
   root 'welcome#index'
 
   get 'users/login'
@@ -19,6 +21,8 @@ Rails.application.routes.draw do
   get 'posts/:id' => 'posts#show' , as: :post 
 
   get 'userdets/show' => 'userdets#show'
+
+  get 'users/logout' 
 
   post 'posts' => 'posts#create'
 

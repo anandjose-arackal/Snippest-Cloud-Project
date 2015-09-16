@@ -20,6 +20,8 @@ GEM
       erubis (~> 2.7.0)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    active_median (0.1.2)
+      activerecord
     activejob (4.2.3)
       activesupport (= 4.2.3)
       globalid (>= 0.3.0)
@@ -64,6 +66,7 @@ GEM
     capistrano3-puma (1.2.1)
       capistrano (~> 3.0)
       puma (>= 2.6)
+    chartkick (1.4.1)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -94,6 +97,8 @@ GEM
       thor (~> 0.14)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
+    groupdate (2.4.0)
+      activesupport (>= 3)
     hashie (3.4.2)
     i18n (0.7.0)
     jbuilder (2.3.1)
@@ -194,6 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_median
   aws-sdk
   bcrypt (~> 3.1.7)
   byebug
@@ -202,10 +208,12 @@ DEPENDENCIES
   capistrano-rails
   capistrano-rvm
   capistrano3-puma
+  chartkick
   coffee-rails (~> 4.1.0)
   elasticsearch-model
   elasticsearch-rails
   figaro
+  groupdate
   jbuilder (~> 2.0)
   jquery-rails
   pg

@@ -69,7 +69,7 @@
                                 <%= @comment_no %> Comments
                                 </span>
                             </div>
-                            <p class="lead">
+                            <p >
                                 <%= @post.post_description %>
                             </p>
 
@@ -83,11 +83,19 @@
                             <%= render partial: 'likes/button', locals: { post: @post,like: @like} %>
                               </div>  
                                 <i class="icon-tags"></i> Tags <a class="btn btn-xs btn-primary" href="#">CSS3</a> <a class="btn btn-xs btn-primary" href="#">HTML5</a> <a class="btn btn-xs btn-primary" href="#">WordPress</a> <a class="btn btn-xs btn-primary" href="#">Joomla</a>
-                            </div>
+                            
 
-                            <p></p>
-
-                        <%= link_to "Comments", "#" , id:"comment-link" %>   
+                            <hr>
+                           <% if @attachments.size >0 %>
+                              <h4>Attachments</h4>
+                           <% end %>
+                           <% @attachments.each do |at| %>
+                            <ol>
+                                <%=link_to "Download" , at.attachment_link %>
+                            </ol>
+                           <% end -%>
+                        <%= link_to "Comments", "#" , id:"comment-link" , class:"btn btn-info" %> 
+                        </div>  
                         <section id ="comments-section"> 
                             <div id="comments">
                             <ol id="comments-list">
