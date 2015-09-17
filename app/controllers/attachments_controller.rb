@@ -7,7 +7,7 @@ class AttachmentsController < ApplicationController
          format.html
       end
   end
-  
+
   def create
   	#create a unique name
   	file_key= filename# uniqe name
@@ -15,10 +15,10 @@ class AttachmentsController < ApplicationController
   	file_key=file_key+file_ext
     file_url=(params[:file].path)
   	#Create S3 object
-    
+
   	obj = S3.bucket('snippestanandjose').object(file_key)
     obj.upload_file(file_url, acl:'public-read')
-    
+
     @post=Post.find(params[:post_id])
     @attachment=@post.attachments.create
     @attachment.attachment_link=obj.public_url
@@ -30,12 +30,12 @@ class AttachmentsController < ApplicationController
       flash.now[:notice] = 'There was an error'
       render :new
     end
-    
+
    end
 
 private
 
     def filename
          "#{SecureRandom.urlsafe_base64}"
-    end    
+    end
 end

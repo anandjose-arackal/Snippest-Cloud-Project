@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   get 'admin/index'
 
   root 'welcome#index'
@@ -18,11 +18,12 @@ Rails.application.routes.draw do
 
   get 'search', to: 'search#search'
 
-  get 'posts/:id' => 'posts#show' , as: :post 
+
+  #get 'posts/:id' => 'posts#show' , as: :post
 
   get 'userdets/show' => 'userdets#show'
 
-  get 'users/logout' 
+  get 'users/logout'
 
   post 'posts' => 'posts#create'
 
@@ -30,12 +31,12 @@ Rails.application.routes.draw do
 
   post 'users/attempt_login' => 'users#attempt_login'
 
-  post 'posts/search' => 'posts#search' 
+  post 'posts/search' => 'posts#search'
 
   match 'like', to: 'likes#like', via: :post
-  
+
   match 'unlike', to: 'likes#unlike', via: :delete
-   
+
   #match ':controller(/:action(/:id))', :via => [:get,:post]
   resources :users do
     resources :userdets
@@ -44,8 +45,8 @@ Rails.application.routes.draw do
    resources :comments
    resources :attachments
   end
-  
-  
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

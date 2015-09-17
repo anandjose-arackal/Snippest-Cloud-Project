@@ -11,7 +11,7 @@ class AdminController < ApplicationController
   	 else
   	 	session[:user_name]=nil
   	 	session[:user_id]=nil
-  	 	redirct_to :contoller => 'users', :action => 'login'
+  	 	redirect_to :controller => 'users', :action => 'login'
   	 end
   end
 end

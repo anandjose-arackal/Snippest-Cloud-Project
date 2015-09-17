@@ -33,8 +33,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'elasticsearch-model'
 gem 'elasticsearch-rails'
 # rich text box
-gem 'quill-rails', '~> 0.1.0' 
-#database support 
+gem 'quill-rails', '~> 0.1.0'
+#database support
 #AWS sdk
 gem 'aws-sdk'
 ## chart kick
@@ -43,7 +43,7 @@ gem 'groupdate'
 gem 'active_median'
 ### deploy
 gem 'figaro'
-gem 'puma'  
+gem 'puma'
 group :development, :test do
   # Use postgres as the database for Active Record
   gem 'pg'
@@ -67,6 +67,3 @@ end
 group :production do
 	gem 'pg'
 end
-
-
-
