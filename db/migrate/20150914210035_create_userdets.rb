@@ -7,7 +7,7 @@ class CreateUserdets < ActiveRecord::Migration
       t.integer  :user_rateing,      limit: 4
       t.string   :user_img_path,   limit: 100
       t.datetime :created_at
-      t.datetime :updated_at 
+      t.datetime :updated_at
     end
   end
 

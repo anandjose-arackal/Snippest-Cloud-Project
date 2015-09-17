@@ -12,16 +12,16 @@
                 </div>
             </div>
         </div>
-</section><!--/#title--> 
+</section><!--/#title-->
 
 <% if flash[:notice] %>
 <section>
  <div  class="alert alert-warning col-md-4 col-md-offset-4">
     <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Warning!</strong> 
+    <strong>Warning!</strong>
     <%= flash[:notice] %>
  </div>
-<% end %>  
+<% end %>
 </section>
 <section id="registration" class="container">
  <!-- <div class="col-md-4 col-md-offset-4 ">-->
@@ -34,15 +34,15 @@
             </div>
 
             <div class="form-group">
-                 <%=f.password_field :password , class: "form-control" , placeholder: "Enter Password" , required: "true" 
+                 <%=f.password_field :password , class: "form-control" , placeholder: "Enter Password" , required: "true"
                     %>
             </div>
 
             <div  class="form-group">
                  <%= submit_tag "Save" , class:"btn btn-success btn-md btn-block" %>
-            </div> 
-      </fieldset>       
+            </div>
+      </fieldset>
     <% end %>
-   </div> 
+   </div>
 <!-- </div>-->
 </section>

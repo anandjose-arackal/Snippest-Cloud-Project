@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   	@title="Snippest"
     @posts=Post.select('id,post_heading,post_description,post_tags').last(6)
   end
-  
+
   def new
   	@title="Post a New Article"
   	@post=Post.new
@@ -14,13 +14,13 @@ class PostsController < ApplicationController
     @post=Post.new(post_params)
     @post.user_id=session[:user_id]
        if @post.save
-        saved_Postid=@post.id 
+        saved_Postid=@post.id
         @attachment=@post.attachments.new
         redirect_to(new_post_attachment_path(@post,@attachment))
       else
        redirect_to :controller => 'posts' , :action => 'new'
       end
-  
+
   end
 
   def show
@@ -31,14 +31,14 @@ class PostsController < ApplicationController
     @like_no=Like.select('id').where("post_id = ?",params[:id])
     @like=Like.select('id').where("post_id = ? AND user_id =?" ,params[:id] , session[:user_id]).count
     @attachments=@post.attachments
-      
+
   end
 
   def post_about
   	@title="Post a New Article"
   end
 
-  private 
+  private
 
   def post_params
     params.require(:post).permit(:post_heading,:post_content,:post_description,:post_tags)

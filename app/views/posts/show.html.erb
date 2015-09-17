@@ -3,7 +3,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1><%= @post.post_heading %></h1>
-                    
+
                 </div>
                 <div class="col-sm-6">
                     <ul class="breadcrumb pull-right">
@@ -49,7 +49,7 @@
                                 <li><a href="#">Bootstrap</a></li>
                             </ul>
                         </div>
-                    </div>                     
+                    </div>
                 </div><!--/.categories-->
             </aside>
                 <div class="col-sm-8 col-sm-pull-4">
@@ -65,7 +65,7 @@
                                 <span><i class="icon-calendar"></i>
                                 <%= time_ago_in_words(@post.created_at) %> ago
                                 </span>
-                                <span><i class="icon-comment"></i> 
+                                <span><i class="icon-comment"></i>
                                 <%= @comment_no %> Comments
                                 </span>
                             </div>
@@ -81,9 +81,9 @@
                              <%#=link_to '<i class="glyphicon glyphicon-heart"></i> Like'.html_safe, '#' ,class:"btn btn-default pull-right"%>
                              <div class="likes-button">
                             <%= render partial: 'likes/button', locals: { post: @post,like: @like} %>
-                              </div>  
+                              </div>
                                 <i class="icon-tags"></i> Tags <a class="btn btn-xs btn-primary" href="#">CSS3</a> <a class="btn btn-xs btn-primary" href="#">HTML5</a> <a class="btn btn-xs btn-primary" href="#">WordPress</a> <a class="btn btn-xs btn-primary" href="#">Joomla</a>
-                            
+
 
                             <hr>
                            <% if @attachments.size >0 %>
@@ -94,9 +94,9 @@
                                 <%=link_to "Download" , at.attachment_link %>
                             </ol>
                            <% end -%>
-                        <%= link_to "Comments", "#" , id:"comment-link" , class:"btn btn-info" %> 
-                        </div>  
-                        <section id ="comments-section"> 
+                        <%= link_to "Comments", "#" , id:"comment-link" , class:"btn btn-info" %>
+                        </div>
+                        <section id ="comments-section">
                             <div id="comments">
                             <ol id="comments-list">
                              <%= render @comments %>
@@ -105,7 +105,7 @@
                                     <h3>Leave a comment</h3>
                                     <%=form_for [@post ,@post.comments.new] , remote:true do |f| %>
                                         <div class="form-group">
-                                            
+
                                         <div class="form-group">
                                             <div class="col-sm-12">
                                                 <%= f.text_area :comments_content , rows:"8", class:"form-control", placeholder:"Write your comment here" %>
