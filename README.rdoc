@@ -1,28 +1,6 @@
-== README
+<b>Snippest</b>
+Web Apps for Academician
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Snippest is Communinty cloud for acaademician  . Academeician can collaborate their research paper and  notes with cloud.
+Anyone they have interested in knowledge get access to 1000+ research paper
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
